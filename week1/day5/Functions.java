@@ -56,7 +56,7 @@ public class Functions {
            // If it is not in range from 1 to 9.
            // then it will show you an error "Invalid input."
             try {
-                numInput = in.nextInt();
+                numInput = Integer.parseInt(in.nextLine());
                 if (!(numInput > 0 && numInput <= 9)) {
                     System.out.println(
                         "Invalid input; re-enter slot number:");
