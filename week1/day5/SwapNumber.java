@@ -1,9 +1,6 @@
 package day5;
 
-import java.io.*; // for handling input/output
-import java.text.NumberFormat.Style;
 import java.util.*; // contains Collections framework
-
 
 class SwapNumber {
 	public static void main (String[] args) {

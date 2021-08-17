@@ -1,9 +1,6 @@
 package day5;
 import java.util.*;
 /*
-
-
-
 Methods in java have following signature
 [specifiers] {return_type} {function_name} ([args])
 
@@ -104,6 +101,7 @@ public class Functions {
                 "Congratulations! " + winner
                 + "'s have won! Thanks for playing.");
         }
+        in.close();
     }
         
     static String[] board;

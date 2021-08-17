@@ -15,8 +15,8 @@ public class Add {
 
     public static void main(String[] args) {
         //Add addObj1 = new Add();
-        Add addObj2 = new Add(2, 3);
-        Add addObj3 = new Add(4, 5);
+        //Add addObj2 = new Add(2, 3);
+        //Add addObj3 = new Add(4, 5);
         //addObj2.AddIntegers();
         //addObj3.AddIntegers();
         int result = Add.AddIntegers(2,3) + Add.AddIntegers(4, 5);
