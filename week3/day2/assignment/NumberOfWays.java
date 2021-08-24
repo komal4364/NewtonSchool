@@ -10,9 +10,9 @@ public class NumberOfWays {
         int numTestCases = Integer.parseInt(in.nextLine());
         int testCase = 1;
         while (numTestCases > 0) {
-            int target = Integer.parseInt(in.nextLine());
-            int []count = {0};
-            ArrayList<Integer> records = new ArrayList<Integer>();
+            int target = Integer.parseInt(in.nextLine()); //N
+            int []count = {0}; //variable that stores the output.
+            ArrayList<Integer> records = new ArrayList<Integer>(); //i want to store the combination
             numWays(target, 1, count, records);
             System.out.println("testCase " + testCase + "=> result:" + count[0]);
             testCase = testCase+1;
@@ -22,7 +22,7 @@ public class NumberOfWays {
     }
 
     private static void numWays(int target, int val, int []count, ArrayList<Integer> records) {
-        if (target == 0) {
+        if (target == 0) { //Solution condition;
             count[0]=count[0]+1;
             System.out.println(records.toString());
         }
@@ -31,7 +31,7 @@ public class NumberOfWays {
         }
         for (int i=val;i<=target;i++) {
             if (i>target) {
-                return;
+                return; //bound condition;
             }
             target = target-i;
             records.add(i);

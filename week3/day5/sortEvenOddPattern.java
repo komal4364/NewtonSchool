@@ -1,9 +1,8 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class sortEvenOddPattern {
      public static void main(String[] args) {
-        int []arr ={2, 1, 5, 6, 7};
+        int []arr ={2, 1, 5, 6, 7}; //{7,5,1,2,6}
         partitionOddEvenSort(arr);
         System.out.println(Arrays.toString(arr));
      }
@@ -17,7 +16,7 @@ public class sortEvenOddPattern {
             while(arr[r]%2==0 && r>l) {
                 r--;
             }
-            if (r > l) {
+            if (r > l) { //swap logic
                  int temp = arr[l];
                  arr[l] = arr[r];
                  arr[r] = temp;
@@ -31,6 +30,7 @@ public class sortEvenOddPattern {
         }
         Arrays.sort(arr, oddCount, arr.length);
      }
+     
      static void negateOddSort(int []arr) {
          for (int i = 0; i < arr.length; i++) {
              if (arr[i] % 2 != 0) { // odd numbers negate

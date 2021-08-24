@@ -1,10 +1,9 @@
-package week3.day1;
-
 import java.util.Arrays;
 
 public class QuickSort {
         public static void main(String[] args) {
-            int arr[] = {10, 7, 8, 9, 1, 5};
+            //int arr[] = {10, 7, 8, 9, 1, 5};
+            int arr[] = {7, 2, 3, 1, 6, 15, 4};
             int n = arr.length;
       
             QuickSort ob = new QuickSort();
