@@ -1,4 +1,4 @@
-package week5.day5;
+package day5;
 
 public class Stack {
     public static void main(String[] args) {
