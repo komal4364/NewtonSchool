@@ -24,7 +24,7 @@ Let’s look at the different objects and methods available in each category in 
 - Extends Collection Interface
 - ArrayList, Vector and LinkedList are implementation of List Interface. 
 
-**ArrayList**
+**ArrayList** (https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
 - Unlike Arrays, ArrayList supports Dynamic Resizing, objects can be added or removed dynamically.
 
 | Action/Method  | Syntax                                                     | Comment |
