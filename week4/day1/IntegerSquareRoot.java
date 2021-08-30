@@ -1,4 +1,4 @@
-package day1;
+
 public class IntegerSquareRoot {
     public static void main(String[] args) {
         System.out.println(squareRoot(11));

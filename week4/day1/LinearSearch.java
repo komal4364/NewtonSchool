@@ -1,4 +1,3 @@
-package day1;
 public class LinearSearch {
     public static void main(String[] args) {
         int []arr = {25, 2, 3, 22, 1}; //unsorted;
