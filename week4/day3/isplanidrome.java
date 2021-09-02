@@ -1,4 +1,4 @@
-package day3;
+
 
 public class isplanidrome {
     public static void main(String[] args) {

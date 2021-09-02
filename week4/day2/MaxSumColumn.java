@@ -1,4 +1,3 @@
-package day2;
 
 public class MaxSumColumn {
     public static void main(String[] args) {

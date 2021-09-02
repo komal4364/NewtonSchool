@@ -1,5 +1,3 @@
-package day3;
-
 
 /*
 Strings are objects or sequence of characters;

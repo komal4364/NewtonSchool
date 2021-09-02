@@ -1,4 +1,3 @@
-package day2;
 
 /*
 Given a square matrix mat, return the sum of the matrix diagonals.

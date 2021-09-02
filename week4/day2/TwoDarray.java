@@ -1,8 +1,9 @@
-package day2;
+
 
 import java.util.Arrays;
 
 public class TwoDarray {
+
     public static void main(String[] args) {
         TwoDDemoDeclaration();
         TwoDDemoDefinition();
