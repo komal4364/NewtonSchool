@@ -20,6 +20,9 @@ public class Strings {
         String helloString = new String(helloArray);
         System.out.println(helloString);
         stringDemo();
+
+        String big = "komal\0big";
+        System.out.println(big);
     }
 
     private static void stringDemo() {
