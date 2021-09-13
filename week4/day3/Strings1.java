@@ -21,6 +21,10 @@ public class Strings1 {
         System.out.println(inp.substring(2, 4));
         System.out.println(inp.contains("priyanka"));
         System.out.println(inp.replace("omal", "amal"));
-        
+        String.join(",", "kumar", "done");
+    }
+    private static void testDemo() {
+        StringBuilder name = new StringBuilder();
+        StringBuffer name1 = new StringBuffer();
     }
 }
