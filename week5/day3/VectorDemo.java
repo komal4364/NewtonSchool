@@ -10,10 +10,12 @@ access element/find/search
 modify element
 remove an element
 */
-public class DataStructure {
+public class VectorDemo {
     public static void main(String[] args) {
         //int []arr = new int[2]; // u have a fixed size of memory of 10*4 bytes = 40bytes;
-        Vector<Integer> studentIds = new Vector<Integer>();
+        //initialize and allocate memory
+        Vector<Integer> studentIds = new Vector<Integer>(2, 5);
+        //insertion an element; duplicates are allowed, and the order of insertion is preseved.
         studentIds.add(1);
         System.out.println(studentIds.capacity() + " " + studentIds.size());
         studentIds.add(2);
@@ -24,13 +26,18 @@ public class DataStructure {
         studentIds.add(4);
         System.out.println(studentIds.capacity() + " " + studentIds.size());
 
-        for (int i = 0; i < studentIds.size(); i++) {
-            //obj[index]
-            System.out.println(studentIds.get(i));
-        }
+        int sum = 0;
+        //reading all the objects in the collections.
         Iterator<Integer> it = studentIds.iterator();
         while (it.hasNext()) {
-            System.out.println(it.next());
+            sum = sum + it.next();
         }
+
+        //finding an element
+        int idx = studentIds.indexOf(4);
+        System.out.println("index of 4 is : " + idx);
+
+        //remove an element;
+        studentIds.remove(3);
     }
 }
