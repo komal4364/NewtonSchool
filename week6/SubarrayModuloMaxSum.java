@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class SubarrayModuloMaxSum {
     public static void main(String[] args) {
@@ -11,10 +13,27 @@ public class SubarrayModuloMaxSum {
             arr[i++] = in.nextInt();
         }
         in.close();
-        long result = maxSumSubArrayModulo(arr, M);
+        long result = maxSumSubArrayModuloOptimized(arr, M);
         System.out.println(result);
     }
 
+    
+    private static long maxSumSubArrayModuloOptimized(int []arr, long M) {
+        long prefixSum = 0, maxSubArraySum = 0;
+        Set<Long> prefixSums = new TreeSet<Long>();
+        prefixSums.add(0L);
+        for (int i = 0; i < arr.length; i++) {
+            prefixSum = (prefixSum + arr[i] + M) % M;
+            maxSubArraySum = Math.max(maxSubArraySum, prefixSum);
+            for (Long pSum : prefixSums) {
+                if (pSum >= prefixSum+1) {
+                    maxSubArraySum = Math.max(maxSubArraySum, prefixSum - pSum + M);
+                }
+            }
+            prefixSums.add(prefixSum);
+        }
+        return maxSubArraySum;
+    }
     /*
         arr = [6 6 11 15 2] => generating running sum/prefix sum
         sumarr = [6,12,23,38,40]; find sum of elements from index i to j;
