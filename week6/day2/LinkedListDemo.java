@@ -33,6 +33,22 @@ class Node {
 //user defined datatype class Car, Class Shop, etc,,
 class LinkedListCustom {
     Node head = null; // field
+    void AddNodeAtPosition(Person data, int pos) {
+        Node curr = this.head;
+        Node temp = new Node(data); // memory allocaation for new node;
+        if (pos == 1) {
+            temp.next = this.head;
+            this.head = temp;
+            return;
+        }
+        int i = 1;
+        while (i != pos-1) { //condition in which you have to break;
+            curr = curr.next;
+            i++;
+        }
+        temp.next = curr.next;
+        curr.next = temp;
+    }
 
     void AddNodeAtFront(Person data) {
         Node temp = new Node(data); // [data | null] //step1: create memory for the new node in the linked list.
@@ -55,7 +71,7 @@ class LinkedListCustom {
 
 public class LinkedListDemo {
     public static void main(String[] args) {
-        /*
+        
         LinkedListCustom ll = new LinkedListCustom();
         Person p1 = new Person("komal", 31, "explorer");
         ll.AddNodeAtFront(p1);
@@ -63,8 +79,17 @@ public class LinkedListDemo {
         Person p2 = new Person("anil", 28, "explorer");
         ll.AddNodeAtFront(p2);
         ll.print();
-        */
-        LinkedList<Person> students = new LinkedList<>();
+        Person p30 = new Person("kumar", 30, "explorer");
+        ll.AddNodeAtPosition(p30, 2);
+        ll.print();
+        Person p25 = new Person("guru", 25, "explorer");
+        ll.AddNodeAtPosition(p25, 1);
+        ll.print();
+        Person pxyz = new Person("xyz", 25, "explorer");
+        ll.AddNodeAtPosition(pxyz, 4);
+        ll.print();
+        /*
+        //LinkedList<Person> students = new LinkedList<>();
         Person p1 = new Person("komal", 31, "explorer");
         students.add(p1);
         for (Person person : students) {
@@ -83,5 +108,10 @@ public class LinkedListDemo {
             System.out.print(plocal.name + ",");
         }
         System.out.println();
+        */
+    
     }
+
+
+
 }
