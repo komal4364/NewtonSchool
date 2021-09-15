@@ -1,5 +1,7 @@
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class SubarrayModuloMaxSum {
@@ -20,17 +22,22 @@ public class SubarrayModuloMaxSum {
     
     private static long maxSumSubArrayModuloOptimized(int []arr, long M) {
         long prefixSum = 0, maxSubArraySum = 0;
-        Set<Long> prefixSums = new TreeSet<Long>();
-        prefixSums.add(0L);
+        TreeMap<Long, Integer> prefixSums = new TreeMap<Long, Integer>();
+        prefixSums.put(0L, 0);
         for (int i = 0; i < arr.length; i++) {
             prefixSum = (prefixSum + arr[i] + M) % M;
             maxSubArraySum = Math.max(maxSubArraySum, prefixSum);
+            Long pSum = prefixSums.ceilingKey(prefixSum+1);
+            if (pSum != null)
+                maxSubArraySum = Math.max(maxSubArraySum, prefixSum - pSum + M);
+            /*
             for (Long pSum : prefixSums) {
                 if (pSum >= prefixSum+1) {
                     maxSubArraySum = Math.max(maxSubArraySum, prefixSum - pSum + M);
                 }
             }
-            prefixSums.add(prefixSum);
+            */
+            prefixSums.put(prefixSum, i);
         }
         return maxSubArraySum;
     }
