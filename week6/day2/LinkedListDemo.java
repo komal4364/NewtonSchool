@@ -1,17 +1,19 @@
 package day2;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
-
+import java.util.List;
 
 /*
 Step1 : create a object called person (name, age, batch)
 Step2: connect this object as a single linked list.
 */
 class Person {
-    String name; //16bytes, 32bytes.
-    int age; //4bytes
-    String batch; //16bytes
+    String name; // 16bytes, 32bytes.
+    int age; // 4bytes
+    String batch; // 16bytes
+
     Person(String name, int age, String batch) {
         this.name = name;
         this.age = age;
@@ -19,20 +21,43 @@ class Person {
     }
 }
 
-//Person []students = new Person[1000]; /// 1000 * 40bytes = 40000bytes;
+// Person []students = new Person[1000]; /// 1000 * 40bytes = 40000bytes;
 
-/*we need a node that holds the data and reference to next node; */
+/* we need a node that holds the data and reference to next node; */
 class Node {
     Person data;
-    Node next; 
+    Node next;
+
     Node(Person data) {
         this.data = data;
         this.next = null;
     }
 }
-//user defined datatype class Car, Class Shop, etc,,
+
+/*
+ * head : 1->2->3 nhead - null; nhead -> 1 (head ->1 ->2 ->3) head = head.next;
+ * head -> (2->3); nhead -> 1; nhead.next = null;
+ */
+// user defined datatype class Car, Class Shop, etc,,
 class LinkedListCustom {
     Node head = null; // field
+
+    void ReverseLinkedList() {
+        Node nHead = null; // step1
+        while (this.head != null) {
+            Node temp = head;
+            head = head.next;
+            if (nHead == null) {
+                nHead = temp;
+                nHead.next = null;
+            } else {
+                temp.next = nHead;
+                nHead = temp;
+            }
+        }
+        this.head = nHead;
+    }
+
     void AddNodeAtPosition(Person data, int pos) {
         Node curr = this.head;
         Node temp = new Node(data); // memory allocaation for new node;
@@ -42,7 +67,7 @@ class LinkedListCustom {
             return;
         }
         int i = 1;
-        while (i != pos-1) { //condition in which you have to break;
+        while (i != pos - 1) { // condition in which you have to break;
             curr = curr.next;
             i++;
         }
@@ -53,12 +78,13 @@ class LinkedListCustom {
     void AddNodeAtFront(Person data) {
         Node temp = new Node(data); // [data | null] //step1: create memory for the new node in the linked list.
         if (head == null) {
-            head = temp; //corner case; where we are having no nodes in the linked list.
+            head = temp; // corner case; where we are having no nodes in the linked list.
         } else {
             temp.next = head;
             head = temp;
         }
     }
+
     void print() {
         Node temp = head;
         while (temp != null) {
@@ -71,7 +97,9 @@ class LinkedListCustom {
 
 public class LinkedListDemo {
     public static void main(String[] args) {
-        
+        Integer[] arr = new Integer[10]; // static array
+        List<Integer> nums = Arrays.asList(arr); // dynamic array
+
         LinkedListCustom ll = new LinkedListCustom();
         Person p1 = new Person("komal", 31, "explorer");
         ll.AddNodeAtFront(p1);
@@ -87,6 +115,8 @@ public class LinkedListDemo {
         ll.print();
         Person pxyz = new Person("xyz", 25, "explorer");
         ll.AddNodeAtPosition(pxyz, 4);
+        ll.print();
+        ll.ReverseLinkedList();
         ll.print();
         /*
         //LinkedList<Person> students = new LinkedList<>();
