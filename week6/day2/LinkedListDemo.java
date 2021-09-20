@@ -32,7 +32,9 @@ class Node {
 }
 //user defined datatype class Car, Class Shop, etc,,
 class LinkedListCustom {
+    int len = 0;
     Node head = null; // field
+    Node tail = null;
     void AddNodeAtPosition(Person data, int pos) {
         Node curr = this.head;
         Node temp = new Node(data); // memory allocaation for new node;
@@ -67,11 +69,46 @@ class LinkedListCustom {
         }
         System.out.println();
     }
+
+    /*
+    public static Node Merge (Node head1, Node head2){
+        Node nhead = null;
+        if (head1.val < head2.val) {
+            nhead = head1;
+            head1 = head1.next;
+            nhead.next = null;
+        } else {
+            nhead = head2;
+            head2 = head2.next;
+            nhead.next = null;
+        }
+        Node curr = nhead;
+        while (head1 != null && head2 != null) {
+            if (head1.val < head2.val) {
+                curr.next = head1;
+                head1 = head1.next;
+                curr = curr.next;
+                curr.next = null;
+            } else {
+                curr.next = head2;
+                head1 = head2.next;
+                curr = curr.next;
+                curr.next = null;
+            }
+        }
+        while (head1 != null) {
+            curr.next = head1;
+        }
+        while (head2 != null) {
+            curr.next = head2;
+        }
+        return nhead;
+    }
+    */
 }
 
 public class LinkedListDemo {
     public static void main(String[] args) {
-        
         LinkedListCustom ll = new LinkedListCustom();
         Person p1 = new Person("komal", 31, "explorer");
         ll.AddNodeAtFront(p1);
