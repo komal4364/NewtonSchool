@@ -1,5 +1,8 @@
 package StackImpl;
 
+//stack and double linked list; -> exercise.
+// circular ll, double ll, stack with dll (push, pop, peek at the end)
+// 7 -> 7->1 + 2 -> 3 -> 4->5 => 771 + 2345;
 public class StringStack {
     private Node top;
     private int size;
