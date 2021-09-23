@@ -4,8 +4,7 @@ import java.util.*; // contains Collections framework
 class SortByValue implements Comparator<ValueIndexPair> {
     // Used for sorting in ascending order of
     // roll number
-    public int compare(ValueIndexPair a, ValueIndexPair b)
-    {
+    public int compare(ValueIndexPair a, ValueIndexPair b) {
         return a.value - b.value;
     }
 }
