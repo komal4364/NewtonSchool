@@ -29,17 +29,17 @@ public class orangechoccandy {
 
     private static long computeHappiness(Integer []choc, Integer []oran, 
         Integer []unk, int X, int Y, int C) {
-        Arrays.sort(choc, Collections.reverseOrder());
-        Arrays.sort(oran, Collections.reverseOrder());
-        Arrays.sort(unk, Collections.reverseOrder());
+        Arrays.sort(choc, Collections.reverseOrder()); //A
+        Arrays.sort(oran, Collections.reverseOrder()); //B
+        Arrays.sort(unk, Collections.reverseOrder()); //C
         Vector<Integer> candies = new Vector<Integer>();
-        for (int i = 0; i < X; i++) {
+        for (int i = 0; i < X; i++) { //X <= A
             candies.add(choc[i]);
         }
-        for (int i = 0; i < Y; i++) {
+        for (int i = 0; i < Y; i++) { //Y <= B
             candies.add(oran[i]);
         }
-        for (int i = 0; i < C; i++) {
+        for (int i = 0; i < C; i++) { //C
             candies.add(unk[i]);
         }
         Collections.sort(candies, Comparator.reverseOrder());
