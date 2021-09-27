@@ -29,11 +29,13 @@ public class infixtopostfix {
     }
     private static void solve(String inp) {
         Stack<String> stk = new Stack<String>();
+        /*
         for (int i = 0; i < inp.length(); i++) {
             switch (inp.charAt(i)) {
                 case "(":
                 case "+"", - , *, /, ^"
             }
         }
+        */
     }
 }
