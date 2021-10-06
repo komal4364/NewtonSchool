@@ -39,6 +39,8 @@ public class LinkedList { //class which has Nodes connected.
     }
     //Delete node pointed by curr in the dll.
     void DeleteNode(Node curr) {
+        //if curr.next == null i.e curr == tail;
+        //if curr.prev == null ie. curr == head; how do u delete them and udpate head and tail references properly.
         Node t1 = curr.prev;
         Node t2 = curr.next;
         t1.next = t2;

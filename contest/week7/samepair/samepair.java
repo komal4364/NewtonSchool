@@ -1,6 +1,8 @@
 package samepair;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -18,7 +20,7 @@ public class samepair {
     }
 
     private static void solve(ArrayList<Integer> nums, int N) {
-        Map<Integer, Integer> freq = new TreeMap<Integer, Integer>();
+        Map<Integer, Integer> freq = new TreeMap<Integer, Integer>(); //polymorphisim
         for (int i = 0; i < N; i++) {
             int key = nums.get(i);
             if (freq.containsKey(key) == false) {
